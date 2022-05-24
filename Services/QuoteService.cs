@@ -29,7 +29,7 @@ public class QuoteService
     {
         using(_connection)
         {
-            var sql =  $"select q.id,q.Author, q.QuoteText , c.categoryname , q.categoryid from quote as q  join category c on c.id = c.id;";
+            var sql =  $"select q.id,q.Author, q.QuoteText ,; c.categoryname  from quote as q  join category c on c.id = c.id";
 
             var res =await _connection.QueryAsync<GetQuotes>(sql);
             return res.ToList(); 
